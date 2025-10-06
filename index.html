@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent AI Toolkit - সন্তানের পড়াশোনায় সাহায্য করুন</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #25D366; --secondary-color: #4A90E2; --dark-text: #333333; --light-text: #555555; --background-light: #f9fafb; --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Hind Siliguri', sans-serif; background-color: var(--white); color: var(--dark-text); line-height: 1.8; font-size: 16px; }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+        h1, h2, h3 { font-weight: 700; line-height: 1.3; margin-bottom: 20px; }
+        h1 { font-size: 2.5rem; } h2 { font-size: 2rem; text-align: center; color: #2c3e50; margin-bottom: 40px; } h3 { font-size: 1.25rem; }
+        p { margin-bottom: 15px; color: var(--light-text); }
+        section { padding: 80px 0; }
+        .section-light, #features { background-color: var(--background-light); }
+        .hero { background-color: #eaf2fa; text-align: center; padding: 60px 0; }
+        .hero-content-wrapper { display: flex; flex-direction: column; }
+        .hero-text-content p { font-size: 1.1rem; max-width: 600px; margin: 0 auto 15px auto; }
+        .ebook-cover { max-width: 250px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); margin: 0 auto 30px auto; }
+        
+        .desktop-only-cta { display: none; }
+        .mobile-only-cta { display: block; }
+        
+        .cta-button { display: inline-block; color: var(--white); padding: 15px 35px; font-size: 1.1rem; font-weight: 600; text-decoration: none; border-radius: 50px; transition: background-color 0.3s ease, transform 0.2s ease; border: none; cursor: pointer; }
+        .cta-button:hover { transform: translateY(-3px); }
+        .cta-button.hero-cta { background-color: var(--secondary-color); box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4); }
+        .cta-button.hero-cta:hover { background-color: #357ABD; }
+        .cta-button.whatsapp-cta { background-color: var(--primary-color); box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); }
+        .cta-button.whatsapp-cta:hover { background-color: #1DA851; }
+        .problem-list { list-style: none; max-width: 700px; margin: 0 auto; }
+        .problem-list li { font-size: 1.1rem; margin-bottom: 15px; display: flex; align-items: flex-start; }
+        .problem-list li::before { content: '❓'; margin-right: 15px; font-size: 1.2rem; line-height: 1.6; }
+        .features-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+        .feature-card { background-color: var(--white); padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+        .feature-icon { font-size: 3rem; margin-bottom: 15px; color: var(--secondary-color); }
+        .final-cta { background-color: #2c3e50; color: var(--white); text-align: center; }
+        .final-cta h2, .final-cta p { color: var(--white); }
+        .final-cta p { color: #bdc3c7; max-width: 550px; margin-left: auto; margin-right: auto; }
+        .reassurance-note { font-size: 0.9rem; color: #95a5a6; margin-top: 20px; }
+        footer { text-align: center; padding: 20px; background-color: var(--background-light); font-size: 0.9rem; color: var(--light-text); }
+        
+        @media (min-width: 768px) {
+            .hero-content-wrapper { flex-direction: row; align-items: center; gap: 40px; text-align: left; }
+            .hero-text-content { flex: 1.2; }
+            .hero-image-content { flex: 0.8; }
+            h1 { font-size: 2.8rem; }
+            .hero-text-content p { margin: 0 0 30px 0; }
+            .ebook-cover { margin: 0; max-width: 300px; }
+            
+            .desktop-only-cta { display: block; }
+            .mobile-only-cta { display: none; }
+            
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (min-width: 992px) {
+            .features-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-text-content">
+                    <h1>সন্তানের ইংরেজি মিডিয়ামের পড়াশোনা নিয়ে আর চিন্তা নয়!</h1>
+                    <p>এবার AI-এর সাহায্যে আপনিও হয়ে উঠুন আপনার সন্তানের বেস্ট স্টাডি পার্টনার। ডাউনলোড করুন আমাদের বিশেষ 'Parent AI Toolkit' – সম্পূর্ণ বিনামূল্যে!</p>
+                    <!-- Button for DESKTOP view -->
+                    <div class="desktop-only-cta">
+                        <a href="#download-whatsapp" class="cta-button hero-cta">এখুনি বিনামূল্যে ডাউনলোড করুন</a>
+                    </div>
+                </div>
+                <div class="hero-image-content">
+                    <img src="https://i.ibb.co/L95Vz6K/ebook-cover.png" alt="Parent AI Toolkit Ebook Cover" class="ebook-cover">
+                </div>
+            </div>
+            <!-- Button for MOBILE view -->
+            <div class="mobile-only-cta">
+                <a href="#download-whatsapp" class="cta-button hero-cta">এখুনি বিনামূল্যে ডাউনলোড করুন</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="problem">
+            <div class="container">
+                <h2>আপনি কি এই সমস্যাগুলোর সম্মুখীন হচ্ছেন?</h2>
+                <ul class="problem-list">
+                    <li>আপনার সন্তান কি ইংলিশ মিডিয়াম স্কুলে পড়ে, কিন্তু হোমওয়ার্ক বা প্রোজেক্টে সাহায্য করতে গিয়ে আপনি হিমশিম খান?</li>
+                    <li>ইংরেজি ভাষায় সাবলীল না হওয়ার কারণে সন্তানের পড়াশোনার প্রতিটি ধাপে পাশে থাকতে পারছেন না?</li>
+                    <li>বিজ্ঞান, অঙ্ক বা ইংরেজির মতো কঠিন বিষয়গুলো সহজ করে বোঝাতে গিয়ে আটকে যাচ্ছেন?</li>
+                    <li>অনেক চেষ্টা করেও সন্তানের পড়ার প্রতি আগ্রহ বাড়াতে পারছেন না?</li>
+                </ul>
+                <p style="text-align: center; font-weight: 600; margin-top: 30px;">যদি আপনার উত্তর "হ্যাঁ" হয়, তবে এই টুলকিটটি শুধুমাত্র আপনার জন্যই তৈরি।</p>
+            </div>
+        </section>
+        <section id="features">
+            <div class="container">
+                <h2>এই ফ্রি টুলকিটে আপনি কী কী পাবেন?</h2>
+                <div class="features-grid">
+                    <div class="feature-card"><div class="feature-icon">📖</div><h3>দৈনন্দিন পড়াশোনার টুলকিট</h3><p>জটিল ইংরেজি পাঠ সহজ বাংলায় বোঝা, শব্দের অর্থ শেখা, এবং প্রশ্ন তৈরি করার মতো ১০টি সহজ ও কার্যকরী কৌশল।</p></div>
+                    <div class="feature-card"><div class="feature-icon">🔬</div><h3>বিজ্ঞান টুলকিট</h3><p>বিজ্ঞানের কঠিন ধারণাগুলো গল্পের মতো করে শেখানো, বাড়িতে করার মতো নিরাপদ পরীক্ষা, এবং ডায়াগ্রাম আঁকার সহজ উপায়।</p></div>
+                    <div class="feature-card"><div class="feature-icon">🧮</div><h3>অঙ্ক টুলকিট</h3><p>ধাপে ধাপে অঙ্কের সমাধান করা, জ্যামিতির ধারণা পরিষ্কার করা, এবং মজার কুইজের মাধ্যমে অঙ্ক অনুশীলন করার কৌশল।</p></div>
+                    <div class="feature-card"><div class="feature-icon">✨</div><h3>রেডিমেড প্রশ্ন ও কমান্ড</h3><p>প্রতিটি টুলের জন্য তৈরি করা প্রশ্ন দেওয়া আছে, যা আপনি শুধু কপি করে ব্যবহার করতে পারবেন। কোনো টেকনিক্যাল জ্ঞানের প্রয়োজন নেই!</p></div>
+                    <div class="feature-card"><div class="feature-icon">⭐</div><h3>বিশেষ পেরেন্ট টিপস</h3><p>AI-এর উত্তর পাওয়ার পর কীভাবে সন্তানের সাথে বিষয়টি নিয়ে আলোচনা করবেন, তার জন্য প্রত্যেকটি টুলের সাথে রয়েছে বিশেষ টিপস।</p></div>
+                    <!-- NEW FEATURE CARD ADDED HERE -->
+                    <div class="feature-card"><div class="feature-icon">🚀</div><h3>আত্মবিশ্বাস বাড়ানোর টুলকিট</h3><p>পড়াশোনার বাইরেও সন্তানকে মানসিকভাবে শক্তিশালী করে তোলার কৌশল। AI দিয়ে পার্সোনালাইজড উৎসাহমূলক গল্প ও পজিটিভ কথা তৈরি করুন।</p></div>
+                </div>
+            </div>
+        </section>
+        <section>
+             <div class="container">
+                <h2 style="font-size: 1.8rem; max-width: 700px; margin: 0 auto;">আপনাকে এক্সপার্ট হতে হবে না, শুধু একজন যত্নশীল অভিভাবক হলেই চলবে!</h2>
+                <p style="text-align: center; max-width: 700px; margin: 20px auto 0 auto;">আমাদের <strong>Parent AI Toolkit</strong> হল একটি সহজ, ধাপে ধাপে নির্দেশিকা যা আপনাকে দেখাবে কীভাবে AI টুল ব্যবহার করে আপনি আপনার সন্তানের পড়াশোনার যাত্রাকে আরও সহজ ও মজাদার করে তুলতে পারেন।</p>
+            </div>
+        </section>
+        <section id="download-whatsapp" class="final-cta">
+            <div class="container">
+                <h2>✨ আজই আপনার Parent AI Toolkit-এর FREE কপিটি নিন!</h2>
+                <p>টুলকিটটি সঙ্গে সঙ্গে পেতে নিচের বাটনে ক্লিক করে আমাদের WhatsApp করুন। আমরা আপনাকে ফাইলের লিঙ্কটি পাঠিয়ে দেব।</p>
+                <a href="https://wa.link/gjnzl8" class="cta-button whatsapp-cta" target="_blank" rel="noopener noreferrer">WhatsApp-এ টুলকিটটি নিন</a>
+                <p class="reassurance-note">(সম্পূর্ণ বিনামূল্যে।)</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container"><p>&copy; 2024 Parent AI Toolkit - সর্বস্বত্ব সংরক্ষিত।</p></div>
+    </footer>
+</body>
+</html>
